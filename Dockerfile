@@ -6,7 +6,7 @@ RUN apk add wget sudo bash socat
 
 ADD ./heroku_kinesis.sh /root/
 
-EXPOSE 514
+EXPOSE 514/udp
 
 ENTRYPOINT ["/bin/bash", "-c"]
 CMD ["/root/heroku_kinesis.sh"]

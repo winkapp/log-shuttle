@@ -2,7 +2,7 @@
 
 env | grep KINESIS
 
-socat tcp4-listen:514,fork - | tee /dev/stderr | /bin/log-shuttle \
+socat UDP4-RECVFROM:514,fork - | tee /dev/stderr | /bin/log-shuttle \
   -logs-url "$KINESIS_URL" \
   -max-line-length 32000 \
   -batch-size 150 \
